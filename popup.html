@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WP Helper by Uday</title>
+    <script src="js/jquery.js"></script>
+    <script src="popup.js"></script>
+    <style type="text/css">
+    	body {
+    		width: 250px;
+    	}
+    	.add-new-url, .add-new-domain {
+    		width: 100%;
+    		display: none;
+    	}
+    	#url_title {
+    		width: 100%;
+    	}
+    	#part_url {
+    		margin-top: 5px;
+    		width: 100%;
+    	}
+    	#save_link {
+    		margin-top: 5px;
+    	}
+    	.remove_url {
+    		color: red;
+    		cursor: pointer;
+    		/*margin-left: 10px;*/
+    		font-weight: 800;
+    	}
+    	.new_btns {
+    		padding: 5px 0 5px 2px;
+    	}
+    	a {
+    		text-decoration: none;
+    		color: #0073aa;
+    	}
+    	#quick_links {
+    		width: 100%;
+    		font-size: 13px;
+    	}
+    	#quick_links tr:hover td {
+    		background:#e4e3e3;
+    	}
+    	#quick_links td {
+    		padding: 4px 3px;
+    	}
+    	#quick_links a {
+    		display: block;
+    		width: 100%;
+    	}
+    	input[type="button"] {
+    		cursor: pointer;
+    	}
+    	#error {
+    		margin-top: 5px;
+    		line-height: 15px;
+    	}
+        .separator {
+            width: 100%; 
+            text-align: center; 
+            border-bottom: 1px solid #000; 
+            line-height: 0.1em;
+            margin: 3px 0; 
+        } 
+
+        .separator span { 
+            background:#fff; 
+            padding:0 10px; 
+        }
+    </style>
+  </head>
+  <body>
+    <div id="if_admin">
+		<div class="quick_links_container">
+			<fieldset>
+	  			<legend>Quick Links:</legend>
+		  		<table id="quick_links">
+		  		</table>
+	  		</fieldset>
+		</div>
+		<div class="new_btns">
+			<a href="#" id="new_url_btn" data-target="add-new-url" class="add-new">Add New URL</a>&nbsp;&nbsp;&nbsp;
+			<a href="#" id="new_domain_btn" data-target="add-new-domain" class="add-new">Add New Domain</a>
+		</div>
+		<div class="add-new-url add-new-target">
+			<input type="text" id="url_title" placeholder="Title" value="" />
+			<input type="text" id="part_url" placeholder="URL after wp-admin/" value="" />
+			<input type="button" id="save_link" value="Save">
+		</div>
+		<div class="add-new-domain add-new-target">
+			<input type="text" id="domain" placeholder="https://example.com/" value="" />
+			<input type="button" id="save_domain" value="Save"><br>
+            <input type='text' id="current_url" value='' style="width:100%; margin-top: 5px;" disabled />
+		</div>
+    </div>
+	<div id="if_no_admin">
+	</div>
+	<div id="error">
+	</div>
+  </body>
+</html>
